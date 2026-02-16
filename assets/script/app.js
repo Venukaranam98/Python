@@ -66,7 +66,7 @@ function activateBStooltip() {
 
 document.addEventListener("DOMContentLoaded", function () {
   initCanvas();
-  addProjects();
+  // addProjects();
   toggleTheme();
   addSkills();
   activateBStooltip();
