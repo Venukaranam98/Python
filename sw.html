@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clock & Stopwatch</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #222;
+      color: white;
+      margin-top: 50px;
+    }
+
+    .box {
+      margin: 20px auto;
+      padding: 20px;
+      width: 300px;
+      background: #333;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    #clock {
+      font-size: 30px;
+      margin: 10px 0;
+    }
+
+    #stopwatch {
+      font-size: 28px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin: 5px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .start { background: green; color: white; }
+    .stop { background: orange; color: white; }
+    .reset { background: red; color: white; }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Digital Clock</h2>
+  <div id="clock">00:00:00</div>
+</div>
+
+<div class="box">
+  <h2>Stopwatch</h2>
+  <div id="stopwatch">00:00:00</div>
+  <button class="start" onclick="startTimer()">Start</button>
+  <button class="stop" onclick="stopTimer()">Stop</button>
+  <button class="reset" onclick="resetTimer()">Reset</button>
+</div>
+
+<script>
+  // -------- DIGITAL CLOCK --------
+  function updateClock() {
+    const now = new Date();
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+
+    h = h < 10 ? "0" + h : h;
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
+
+    document.getElementById("clock").innerText = `${h}:${m}:${s}`;
+  }
+
+  setInterval(updateClock, 1000);
+
+ 
+  let seconds = 0;
+  let minutes = 0;
+  let hours = 0;
+  let interval = null;
+
+  function updateStopwatch() {
+    seconds++;
+
+    if (seconds === 60) {
+      seconds = 0;
+      minutes++;
+    }
+
+    if (minutes === 60) {
+      minutes = 0;
+      hours++;
+    }
+
+    let h = hours < 10 ? "0" + hours : hours;
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+
+    document.getElementById("stopwatch").innerText = `${h}:${m}:${s}`;
+  }
+
+  function startTimer() {
+    if (interval) return; // prevent multiple intervals
+    interval = setInterval(updateStopwatch, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(interval);
+    interval = null;
+  }
+
+  function resetTimer() {
+    stopTimer();
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    document.getElementById("stopwatch").innerText = "00:00:00";
+  }
+</script>
+
+</body>
+</html>
