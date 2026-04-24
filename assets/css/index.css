@@ -1,0 +1,315 @@
+@import url(./variables.css);
+@import url(./animations.css);
+
+#canvas {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+#canvas-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+main {
+  position: relative;
+}
+
+header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.color-inverse {
+  color: var(--text-inverse);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.social-icon {
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--accent-contrast);
+  background-color: var(--accent);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-4px) rotate(15deg);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  padding: 4px 8px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 0px;
+  background-color: var(--accent-contrast);
+  color: var(--accent);
+  height: 100%;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links:hover {
+  color: var(--accent);
+}
+.nav-links:hover::before {
+  width: 100%;
+}
+
+.toggle-theme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.mouse-icon {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*===============================================
+About Section
+===============================================*/
+.icons-section {
+  display: flex;
+}
+.icon {
+  width: 100px;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card .card-img-wrapper {
+  width: 90%;
+  height: 90%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  background-color: pink;
+}
+
+.project-card div.col-md-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card .card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+
+  transition: transform 0.3s ease;
+}
+
+.project-card .card-img-wrapper img:hover {
+  transform: scale(1.1);
+}
+.project-card {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.project-card .link-wrapper a {
+  position: absolute;
+  z-index: 9;
+  top: -28px;
+  right: -28px;
+
+  width: 45px;
+  height: 45px;
+  border-radius: 999px;
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .link-wrapper a {
+  transform: rotateZ(-45deg);
+  top: 8px;
+  right: 8px;
+}
+
+.project-card:hover .link-wrapper a:hover {
+  transform: scale(1.1);
+}
+
+.project-card .link-wrapper i {
+  width: 45px;
+  height: 45px;
+  font-weight: bold;
+  font-size: var(--text-2xl);
+}
+
+.project-card .badge {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  border: 1px solid transparent;
+}
+
+/*===============================================
+Footer Section
+===============================================*/
+
+footer {
+  /* background-color: var(--bg-main-inverse); */
+}
+
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem auto 4px;
+}
+
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links a,
+.footer-links span {
+  color: var(--text-primary) !important;
+}
+
+/* ===== utils ===== */
+.truncate-4-lines {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* This is the key property for 4 lines */
+  /* For better compatibility and layout control: */
+  text-overflow: ellipsis;
+  /* max-height can be used as a fallback if you know the line-height, 
+     e.g., if line-height is 1.2em, max-height would be 4.8em (1.2em * 4) */
+}
+/* 
+.skills-section .icons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.skills-section .icons-wrapper .icon {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+
+}
+
+.skills-section .icons-wrapper .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+/* --- STYLE 1: Fresh Mint (Centered) --- */
+.skills-section .icons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.skills-section .icon {
+  padding: 10px;
+}
+
+.icon {
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+}
+
+/* Base Image Styles for your .icon img */
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.icon img:hover {
+  transform: scale(1.1);
+}
+
+/* ================================================
+BOOTSTRAP CUSTOM TOOLTIP
+================================================ */
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bg-main-inverse);
+  --bs-tooltip-color: var(--text-inverse);
+  --bs-tooltip-border-color: var(--bg-main-inverse);
+}
