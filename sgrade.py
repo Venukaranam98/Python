@@ -31,6 +31,6 @@ class Students:
         print("Marks:", self.marks)
         print("Grade:", grade)
 
-s1 = Students("Venu", 85)
+s1 = Students(" Venu ", 85)
 
 s1.display()
