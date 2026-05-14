@@ -12,7 +12,7 @@ while True:
     print("5. Load Contacts")
     print("6. Exit")
 
-    choice = input("Enter your choice: ")
+    choice = input("Enter your choice : ")
 
     # Add Contact
     if choice == "1":
