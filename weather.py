@@ -34,7 +34,7 @@ try:
     )
 
     print(
-        "Wind Speed:",
+        "Wind Speed : ",
         data["current_condition"][0]["windspeedKmph"],
         "km/h"
     )
