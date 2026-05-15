@@ -1,15 +1,62 @@
 import requests
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
 
 try:
 
-    response = requests.get("https://api.github.com")
+    username = input(
+        "Enter GitHub username: "
+    )
 
-    print("Status Code:", response.status_code)
+    response = requests.get(
+        f"https://api.github.com/users/{username}"
+    )
 
-    data = response.json()
+    if response.status_code == 200:
 
-    print("Current User URL:", data["current_user_url"])
+        data = response.json()
+
+        logging.info(
+            "GitHub profile fetched successfully"
+        )
+
+        print("\n--- GITHUB PROFILE ---")
+
+        print(
+            "Name:",
+            data["name"]
+        )
+
+        print(
+            "Bio:",
+            data["bio"]
+        )
+
+        print(
+            "Followers:",
+            data["followers"]
+        )
+
+        print(
+            "Following:",
+            data["following"]
+        )
+
+        print(
+            "Public Repositories:",
+            data["public_repos"]
+        )
+
+    else:
+
+        logging.warning(
+            "GitHub user not found"
+        )
 
 except:
 
-    print("Request failed")
+    logging.error(
+        "Failed to fetch GitHub profile"
+    )
