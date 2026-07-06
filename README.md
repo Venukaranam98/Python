@@ -92,23 +92,7 @@ To run the projects, navigate to the respective project directory and run the ma
 * Humidity Display
 * Wind Speed Display
 * Weather History
-* Save Search History
+* Save Search 
 
-## 6. Expense Tracker 
-
-### Concepts Used
-* CSV
-* File Handling
-* Functions
-* Loops
-
-### Features
-* Add Expense
-* View Expenses
-* Total Expense Calculation
-* Save Expenses to CSV
-
-## 7. GitHub Profile Viewer 
-
-### Concepts Used
-* API Request
+## License
+This project is licensed under the MIT License. Please see the [LICENSE](LICENSE) file for details.
