@@ -1,98 +1,12 @@
-# Python Backend Practice Projects 
-
-This repository contains all the Python practice projects I built while learning:
-
-* Python Fundamentals
-* OOP
-* File Handling
-* JSON & CSV
-* APIs
-* Logging
-* Regex
-* Automation
-* Error Handling
-
+# Expense Tracker and Student Grade System
+## Introduction
+This repository contains two mini projects: an expense tracker and a student grade system.
 ## Installation
-To install the required packages, run `pip install -r requirements.txt`.
-
+To use these projects, simply clone the repository and run the respective Python files.
 ## Usage
-To run the projects, navigate to the respective project directory and run the main file. For example, to run the calculator project, navigate to the `basics` directory and run `python calculator.py`.
-
-# Projects Included 
-
-## 1. Smart Calculator 
-
-### Concepts Used
-* Functions
-* Loops
-* If/Else
-* Error Handling
-
-### Features
-* Addition
-* Subtraction
-* Multiplication
-* Division
-* Menu System
-* Continuous Execution Until Exit
-
-## 2. Student Grade Manager 
-
-### Concepts Used
-* OOP
-* JSON
-* File Handling
-* Loops
-
-### Features
-* Add Student
-* View Students
-* Save Student Data
-* Load Student Data
-
-## 3. Contact Book 
-
-### Concepts Used
-* Dictionaries
-* JSON
-* File Handling
-* Loops
-
-### Features
-* Add Contact
-* Search Contact
-* View Contacts
-* Save/Load Contacts
-
-## 4. Password Validator 
-
-### Concepts Used
-* Regex
-* Functions
-* Logging
-
-### Features
-* Minimum Length Validation
-* Uppercase Letter Check
-* Number Check
-* Logging Messages
-
-## 5. Weather App 
-
-### Concepts Used
-* APIs
-* Requests Library
-* JSON
-* Logging
-* Try/Except
-
-### Features
-* City Weather Search
-* Temperature Display
-* Humidity Display
-* Wind Speed Display
-* Weather History
-* Save Search 
-
-## License
-This project is licensed under the MIT License. Please see the [LICENSE](LICENSE) file for details.
+### Expense Tracker
+1. Run `expense_tracker.py` to start the expense tracker.
+2. Follow the prompts to add, view, and save expenses.
+### Student Grade System
+1. Run `student_grade_system.py` to start the student grade system.
+2. Follow the prompts to calculate and display student grades.
