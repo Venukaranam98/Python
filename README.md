@@ -93,3 +93,6 @@ To run the projects, navigate to the respective project directory and run the ma
 * Wind Speed Display
 * Weather History
 * Save Search
+
+## License
+This project is licensed under the MIT License. Please see the LICENSE file for details.
