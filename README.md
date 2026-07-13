@@ -92,4 +92,4 @@ To run the projects, navigate to the respective project directory and run the ma
 * Humidity Display
 * Wind Speed Display
 * Weather History
-* Save Search
+* Save Search 
